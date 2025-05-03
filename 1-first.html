@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<style>
+			.center{
+				text-align: center;
+				justify-content: center;
+			}
+			.icon{
+				width: 85px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="first">
+			<div data-role="header" style="text-align: center;justify-content: center;">header</div>
+			<div data-role="content">
+				<input class="kuang" type="search" placeholder="请输入关键词"/>
+				<input type="hidden" id="route" value="s" />
+			</div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#" data-role="button" data-icon="grid" class="icon">全部分类</a>
+				<a href="#" data-role="button" data-icon="grid" class="icon">全部分类</a>
+				<a href="#" data-role="button" data-icon="grid" class="icon">全部分类</a>
+			</div>
+			<div style="border:2px crimson solid;width: 430px;"></div>	
+			<a href="#second">点击进入第二个页面</a>
+			<div data-role="footer" class="bottom center" >
+				<p>look movic.com</p>
+				<p>关注公众号</p><img src="img/微信符号1.png" alt="" width="30px" height="30px"/>
+			</div>
+		</div>
+		<div data-role="page" id="second">
+			<div data-role="header">header</div>
+			<div data-role="content">这是第二个页面</div>
+			<a href="#first">点击返回第一个页面</a>
+			<div data-role="footer">footer</div>
+		</div>
+	</body>
+</html>
