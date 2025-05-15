@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<!-- 关键移动端meta标签 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>移动端首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- jQuery mobile的CDN -->
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!-- Bootstrap的CDN -->
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.net/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- 使用Material Icons -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="底部选项卡.css" />
+		<link rel="stylesheet" href="1-移动端首页.css" />
+	</head>
+
+	<body>
+	<!-- 底部选项卡页面内容区 -->
+		<div id="home-page" class="page">
+			
+			<!-- 搜索功能 -->
+			<div data-role="content" class="search">
+				<form action="">
+					<a href="4-搜索页面.html"><input id="search_lan" type="search" placeholder="请输入关键词"/></a>
+					<input type="hidden" id="route" value="s" />
+				</form>
+			</div>
+			
+		<!-- 导航栏 -->
+			<div class="horizontal-nav">
+				<div class="nav-item active" data-page="recommend-page">推荐</div>
+				<div class="nav-item" data-page="china-movic">中国电影</div>
+				<div class="nav-item" data-page="han-movic">韩国电影</div>
+				<div class="nav-item" data-page="mei-movic">美国电影</div>
+				<div class="nav-item" data-page="ying-movic">英国电影</div>
+				<div class="nav-item" data-page="yindu-movic">印度电影</div>
+			</div>
+			
+		<!-- 导航栏页面内容容器 -->
+			<div class="page-container">
+		<!-- 推荐页面导航栏1 -->
+				<div id="recommend-page" class="page-content active">
+					<!-- 分类区及轮播图模块 -->
+					<iframe src="a-首页轮播图.html" width="430" height="300px" frameborder="0" style="border-radius: 6px;"></iframe>
+					<div data-role="controlgroup" data-type="horizontal" class="center icon_container">
+						<a href="#" data-role="button" class="icon">🔲 全部分类</a>
+						<a href="#" data-role="button" class="icon">🏆排行榜</a>
+						<a href="#" data-role="button" class="icon">🎬冷门佳片</a>
+						<a href="#" data-role="button" class="icon">⭐口碑</a>
+					</div>
+					
+					<!-- 热门推荐模块 -->
+					<div class="hot-reco">
+						<h3 class="mb-4">🔥 热门推荐</h3>
+						
+						<div class="dy_01 row">	<!-- 使用bootstrap中的网格系统row+col 一个热门推荐为一行-->
+							<div class="hot_01_img">
+								<img src="img/哪吒-热门推荐.jpg" style="width: 200px;height: 211px;" class="col"/>	<!-- 其中图片一列，文字一列，形成两列结构 -->
+								<div class="_4K">4K HDR</div><!-- 4K图标 -->
+							</div>
+							<div class="dy_01_text col"><!-- 右边文字 自成一列col-->
+								<h5>《哪吒2之魔童闹海》</h5>
+								<div class="hot_tip">
+									<button type="button" class="btn btn-primary" style="background-color: rgba(255,165,0,0.1);;color: darkorange;">"全球票房突破158亿人民币"</button>
+								</div>
+								<p class="jianjie">哪吒、敖丙二人重塑肉身，危机重重，携手共度难关！</p>
+								<button type="button" class="btn btn-primary" style="width: 120px;letter-spacing: 0.5em;background: linear-gradient(45deg, #0d6efd, #0b5ed7);">
+									<a href="" style="color: whitesmoke;font-size: 20px;font-family: 'Times New Roman', Times, serif;">观影</a>
+								</button>
+							</div>
+						</div>
+						
+						<div class="dy_01 row">	<!-- 使用bootstrap中的网格系统row+col 一个热门推荐为一行-->
+							<div class="hot_01_img">
+								<img src="img/毒劫-热门推荐.png" style="width: 200px;height: 211px;" class="col"/>	<!-- 其中图片一列，文字一列，形成两列结构 -->
+								<div class="_4K">4K HDR</div><!-- 4K图标 -->
+							</div>
+							<div class="dy_01_text col"><!-- 右边文字 自成一列col-->
+								<h5>《毒劫》</h5>
+								<div class="hot_tip row">
+									<!-- col-sm-5、col-sm-4控制他们的占位多少，同时在style可更改其宽度 -->
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 150px;">**热搜榜第一**</button><!-- class属性太强，只能在内部增加css修饰背景颜色 -->
+									<button type="button" class="btn btn-primary col-sm-4" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 90px;">毒液主角</button>
+								</div>
+								<p class="jianjie">警探游走犯罪世界，揭示由贪污与阴谋交织而成的复杂网络.</p>
+								<button type="button" class="btn btn-primary" style="width: 120px;letter-spacing: 0.5em;background: linear-gradient(45deg, #0d6efd, #0b5ed7);">
+									<a href="" style="color: whitesmoke;font-size: 20px;font-family: 'Times New Roman', Times, serif;">观影</a>
+								</button>
+							</div>
+						</div>
+						
+						<div class="dy_01 row">	<!-- 使用bootstrap中的网格系统row+col 一个热门推荐为一行-->
+							<div class="hot_01_img">
+								<img src="img/唐探-热门推荐.jpg" style="width: 200px;height: 211px;" class="col"/>	<!-- 其中图片一列，文字一列，形成两列结构 -->
+								<div class="_4K">4K HDR</div><!-- 4K图标 -->
+							</div>
+							<div class="dy_01_text col"><!-- 右边文字 自成一列col-->
+								<h5>《唐探》</h5>
+								<div class="hot_tip">
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">喜剧</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">动作</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">悬疑</button>
+								</div>
+								<p class="jianjie">印第安宝强？春节档最出乎意料的电影！快来开启一场笑闹探案之旅的故事！</p>
+								<button type="button" class="btn btn-primary" style="width: 120px;letter-spacing: 0.5em;background: linear-gradient(45deg, #0d6efd, #0b5ed7);">
+									<a href="" style="color: whitesmoke;font-size: 20px;font-family: 'Times New Roman', Times, serif;">观影</a>
+								</button>
+							</div>
+						</div>
+						
+						<div class="dy_01 row">	<!-- 使用bootstrap中的网格系统row+col 一个热门推荐为一行-->
+							<div class="hot_01_img">
+								<img src="img/异形-热门推荐.jpg" style="width: 200px;height: 211px;" class="col"/>	<!-- 其中图片一列，文字一列，形成两列结构 -->
+								<div class="_4K">4K HDR</div><!-- 4K图标 -->
+							</div>
+							<div class="dy_01_text col"><!-- 右边文字 自成一列col-->
+								<h5>《异形:无路可退》</h5>
+								<div class="hot_tip">
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">惊悚</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">动作</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">科幻</button>
+								</div>
+								<p class="jianjie">一系列外星球体降落在地球上，轻而易举地摧毁了它们所经过的一切...</p>
+								<button type="button" class="btn btn-primary" style="width: 120px;letter-spacing: 0.5em;background: linear-gradient(45deg, #0d6efd, #0b5ed7);">
+									<a href="" style="color: whitesmoke;font-size: 20px;font-family: 'Times New Roman', Times, serif;">观影</a>
+								</button>
+							</div>
+						</div>
+						
+						<div class="dy_01 row">	<!-- 使用bootstrap中的网格系统row+col 一个热门推荐为一行-->
+							<div class="hot_01_img">
+								<img src="img/大桥头-热门推荐.jpg" style="width: 200px;height: 211px;" class="col"/>	<!-- 其中图片一列，文字一列，形成两列结构 -->
+								<div class="_4K">4K HDR</div><!-- 4K图标 -->
+							</div>
+							<div class="dy_01_text col"><!-- 右边文字 自成一列col-->
+								<h5>《角头：大桥头》</h5>
+								<div class="hot_tip">
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">黑帮</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">犯罪</button>
+									<button type="button" class="btn btn-primary col-sm-5" style="background-color: rgba(255,165,0,0.1);color: darkorange;width: 70px;">动作</button>
+								</div>
+								<p class="jianjie">黑帮争霸战，新老面孔齐聚一堂，摊开一幅江湖黑帮的岁月群像。</p>
+								<button type="button" class="btn btn-primary" style="width: 120px;letter-spacing: 0.5em;background: linear-gradient(45deg, #0d6efd, #0b5ed7);">
+									<a href="" style="color: whitesmoke;font-size: 20px;font-family: 'Times New Roman', Times, serif;">观影</a>
+								</button>
+							</div>
+						</div>
+						
+					</div>
+				</div> <!-- 推荐页面导航栏1 -->
+				
+		<!-- 中国电影页面导航栏2 -->
+				<div id="china-movic" class="page-content">
+					<iframe src="b-中国电影.html" frameborder="0" allow="fullscreen" width="100%" height="2000px"></iframe>
+				</div>
+				
+		<!-- 韩国电影页面导航栏2 -->
+				<div id="han-movic" class="page-content">
+					<iframe src="b-韩国电影.html" frameborder="0" allow="fullscreen" width="100%" height="2000px"></iframe>
+				</div>
+				
+		<!-- 美国电影页面导航栏2 -->
+				<div id="mei-movic" class="page-content">
+					<iframe src="b-美国电影.html" frameborder="0" allow="fullscreen" width="100%" height="2000px"></iframe>
+				</div>
+		
+		<!-- 英国电影页面导航栏2 -->
+				<div id="ying-movic" class="page-content">
+					<h2>英国电影</h2>
+				</div>
+			
+			<!-- 印度电影页面导航栏2 -->
+				<div id="yindu-movic" class="page-content">
+					<h2>印度电影</h2>
+				</div>
+				
+			</div> <!-- 导航栏页面内容容器 -->
+		
+		</div> <!-- 底部选项卡页面内容区 -->
+		
+		<div id="cart-page" class="page">
+			<iframe src="2-片库.html" frameborder="0" class="pianku_iframe" allow="fullscreen" height="2000px"></iframe>
+		</div>
+		
+		<div id="profile-page" class="page">
+			<iframe src="3-我的.html" frameborder="0" class="pianku_iframe" allow="fullscreen" height="2000px"></iframe>
+			<div class="user-avatar"></div>
+		</div>
+
+		<!-- 优化后的底部选项卡 -->
+		<nav class="tab-bar" role="tablist">
+			<!-- 首页 -->
+			<a href="#home" 
+			   class="tab-item active" 
+			   role="tab"
+			   aria-selected="true"
+			   data-target="home-page"
+			   aria-label="首页">
+				<span class="tab-icon material-icons">🏠</span>
+				<span>首页</span>
+			</a>
+			
+			
+			
+			<!-- 购物车 -->
+			<a href="#cart" 
+			   class="tab-item" 
+			   role="tab"
+			   aria-selected="false"
+			   data-target="cart-page"
+			   aria-label="片库">
+				<span class="tab-icon material-icons">📽️</span>
+				<span>片库</span>
+			</a>
+			
+			<!-- 我的 -->
+			<a href="#profile" 
+			   class="tab-item" 
+			   role="tab"
+			   aria-selected="false"
+			   data-target="profile-page"
+			   aria-label="我的">
+				<span class="tab-icon material-icons">👤</span>
+				<span>我的</span>
+			</a>
+		</nav>
+
+		<script src="底部选项卡.js"></script>
+		<script src="1-移动端首页.js"></script>
+	</body>
+</html>

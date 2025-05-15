@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <style type="text/css">
+        * {box-sizing:border-box}
+        body {font-family: Verdana,sans-serif; margin:0}
+        
+        /* 幻灯片容器 */
+        .slideshow-container {
+          max-width: 100%;
+          position: relative;
+          margin: auto;
+          padding-bottom: 25px; /* 为圆点预留空间 */
+        }
+        
+        /* 幻灯片图片 */
+        .mySlides {
+          display:none;
+        }
+        .mySlides img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+        
+        /* 下一张 & 上一张 按钮 */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          background-color: rgba(0,0,0,0.3);
+          user-select: none;
+        }
+        
+        /* 定位 "下一张" 按钮靠右 */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* 悬停效果 */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* 标题文本 */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 30px; /* 避开圆点 */
+          width: 100%;
+          text-align: center;
+          background: rgba(0,0,0,0.5);
+        }
+        
+        /* 圆点容器 - 内部底部 */
+        .dots-container {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          z-index: 10;
+        }
+        
+        /* 缩小圆点样式 */
+        .dot {
+          cursor: pointer;
+          height: 8px;
+          width: 8px;
+          margin: 0 4px;
+          background-color: rgba(255,255,255,0.5);
+          border-radius: 50%;
+          display: inline-block;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(0,0,0,0.3);
+        }
+        
+        .dot.active, .dot:hover {
+          background-color: white;
+          transform: scale(1.2);
+        }
+        
+        /* 淡出动画 */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="img/唐探-中国电影.jpg">
+        <div class="text">王挺卧底潜行步步为营</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/喜剧之王-中国电影.jpg">
+        <div class="text">暗夜“深渊”，凶案迭起！</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/绝密较量-中国电影.jpg">
+        <div class="text">开挂破案，真相灼伤普通人！</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="img/人生若只如初见-中国电影.jpg">
+        <div class="text">史诗级人猿对决！</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="img/无忧渡-中国电影.jpg">
+        <div class="text">宁理破连环奸杀案</div>
+      </div>
+      
+      <!-- 导航按钮 -->
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      <!-- 圆点指示器 -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // 自动轮播
+        var timer = setInterval(function(){ plusSlides(1) }, 3000);
+        
+        function plusSlides(n) {
+          clearInterval(timer);
+          timer = setInterval(function(){ plusSlides(1) }, 3000);
+          showSlides(slideIndex += n);
+        }
+         
+        function currentSlide(n) {
+          clearInterval(timer);
+          timer = setInterval(function(){ plusSlides(1) }, 3000);
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
